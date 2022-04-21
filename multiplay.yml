@@ -1,0 +1,8 @@
+---
+- hosts: master
+  name: multi commands
+  tasks:
+  - copy: src=/opt/hosts/ dest=/tmp/host
+  - group: name=hindu gid=7000 state=present
+  - user: name=bala uid=7001 group=hindu createhome=yes
+  - shell: echo bala | passwd --stdin bala
